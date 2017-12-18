@@ -130,7 +130,7 @@ def plot_acc_loss(result, epochs):
     plt.subplot(122)
     plt.plot(range(epochs), loss, label='Train_loss')
     plt.plot(range(epochs), val_loss, label='Test_loss')
-    plt.title('Accuracy over ' + str(epochs) + ' Epochs', size=15)
+    plt.title('Loss over ' + str(epochs) + ' Epochs', size=15)
     plt.legend()
     plt.grid(True)
     plt.show()
