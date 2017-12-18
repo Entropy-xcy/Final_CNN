@@ -44,8 +44,8 @@ print("Testing set shape: " + str(X_test.shape) +
 
 ##############################
 
-epochs = 100
-batch_size = 128
+epochs = 200
+batch_size = 64
 
 # lr动态调整
 
@@ -64,9 +64,9 @@ def scheduler(epochs):
 datagen_train = ImageDataGenerator(
     featurewise_center=True,
     featurewise_std_normalization=True,
-    rotation_range=20,
-    width_shift_range=0.2,
-    height_shift_range=0.2,
+    rotation_range=5,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
     horizontal_flip=True,
     vertical_flip=False)
 
@@ -76,7 +76,6 @@ model = Sequential()
 
 model.add(Conv2D(32, (3, 3), padding='same', 
                  input_shape=(32,32,1)))
-model.add(BatchNormalization(axis=1))
 model.add(Activation('relu'))
 model.add(Conv2D(32, (3, 3), padding='same'))
 model.add(Activation('relu'))
@@ -145,9 +144,9 @@ steps = 2048
 datagen_test = ImageDataGenerator(
     featurewise_center=True,
     featurewise_std_normalization=True,
-    rotation_range=20,
-    width_shift_range=0.2,
-    height_shift_range=0.2,
+    rotation_range=5,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
     horizontal_flip=True,
     vertical_flip=False)
 
